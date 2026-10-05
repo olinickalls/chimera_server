@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "chimera-exam-server"
+version = "0.1.0"
+description = "Offline LAN exam answer server with Zeroconf discovery"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.115,<1",
+    "loguru>=0.7,<1",
+    "pydantic>=2.7,<3",
+    "reportlab>=4,<5",
+    "uvicorn>=0.30,<1",
+    "zeroconf>=0.132,<1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "build>=1.2,<2",
+    "pypdf>=5,<7",
+    "pytest>=8,<9",
+    "requests>=2.32,<3",
+]
+
+[project.scripts]
+chimera-server = "chimera_exam_server.server_cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]

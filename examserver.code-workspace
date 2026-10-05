@@ -1,0 +1,10 @@
+{
+    "settings": {
+        "chat.tools.terminal.autoApprove": {
+            "/^uvx ruff check --select F401 src tests scripts$/": {
+                "approve": true,
+                "matchCommandLine": true
+            }
+        }
+    }
+}
