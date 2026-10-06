@@ -1,4 +1,10 @@
 {
+    "folders": [
+        {
+            "name": "examserver",
+            "path": "."
+        }
+    ],
     "settings": {
         "chat.tools.terminal.autoApprove": {
             "/^uvx ruff check --select F401 src tests scripts$/": {
